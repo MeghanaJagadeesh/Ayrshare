@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Social Media</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+<style>
+    .main {
+        height: 330px;
+        width: 330px;
+        border: 1px solid rgb(52, 74, 120);
+        background-color: rgb(52, 74, 120);
+    }
+
+    .main1 {
+        height: 320px;
+        width: 320px;
+        margin: 4px;
+        background-color: rgb(225, 231, 239);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .display img {
+        width: 80%;
+        height: 120px;
+        margin-left: 28px;
+    }
+
+    .logodetail {
+        width: 250;
+        height: 50px;
+        font-size: small;
+        word-break: break-word;
+    }
+
+    .seaContent {
+        color: black;
+        font-size: 12px;
+    }
+
+    .all {
+        text-align: center;
+        margin-left: 25px;
+        margin-right: 25px;
+        word-break: break-word;
+    }
+
+    .instagram-post {
+        position: relative;
+        width: 330px;
+        height: 330px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .instagram-post img {
+        width: 55%;
+        height: auto;
+    }
+
+    .post-content {
+        padding: 15px;
+        width: 45%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: black;
+        word-break: break-word;
+    }
+
+    .title1 {
+        color: white;
+        background-color: rgb(16, 62, 16);
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        overflow: hidden;
+
+    }
+
+    .content1 {
+        color: white;
+        font-size: 13px;
+        /* display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; */
+    }
+
+    .footer1 {
+        color: white;
+        margin-top: auto;
+        font-size: 8px;
+    }
+
+    .navbar-nav li a:hover {
+        background-color: rgb(95, 101, 95);
+        border-radius: 20px;
+
+    }
+
+    #offcanvasNavbar {
+        width: 300px;
+
+    }
+
+    @media (max-width: 480px) {
+        #offcanvasNavbar {
+            max-width: 250px;
+            font-size: 12px;
+        }
+
+        .navbar-brand {
+            width: 80px;
+        }
+
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,
+                255,
+                255,
+                0.5);
+        /* Adjust the alpha value for the desired blur effect */
+        z-index: 1000;
+        display: none;
+    }
+
+    .spinner-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1001;
+        display: none;
+    }
+
+    .spinner {
+        border: 4px solid rgba(17, 17, 17, 0.3);
+        border-radius: 50%;
+        border-top: 4px solid #0c0e10;
+        /* Adjust the color of the spinner */
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+
+    .edit {
+
+        overflow: auto;
+        max-height: 380px;
+    }
+
+    .edit1 {
+        overflow: auto;
+        max-height: 380px;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #captionDisplay {
+        display: none;
+    }
+
+
+    /* @media (max-width: 350px) {
+       
+        .instagram-post {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            width: 55%;
+        height: auto;
+        }
+
+        .post-content {
+             padding: 5px;
+            width: 45%;
+            height: 100%;
+            word-break: break-word;
+        }
+    } */
+    .didyou-template {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .didyou-template__top {
+        background-size: cover;
+        position: relative;
+        background-image: url(https://img.freepik.com/premium-photo/heart-with-stethoscope-it_131346-6135.jpg);
+        flex-basis: 60%;
+    }
+
+    .didyou-template__top-overlay {
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+    }
+
+    .didyou-template__bot {
+        font-size: 14px;
+        position: relative;
+        padding: 20px;
+        background: #1b1b1b;
+        flex-basis: 40%;
+    }
+
+    .didyou-template__bot-title {
+        color: #ffffff;
+        background: #b10b09;
+        width: 220px;
+        padding: 8px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: 900;
+        z-index: 13;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    .didyou-template__bot-content {
+        color: white;
+    }
+
+    .didyou-template__bot-footer {
+        margin-top: 30px;
+        font-size: 12px;
+        color: white;
+        text-align: center;
+    }
+
+    .honey {
+        width: 330px;
+        height: 330px;
+        font-family: 'Open Sans';
+        margin: 0px auto;
+    }
+
+    #captionDisplay1 {
+        display: none;
+    }
+
+    .edit2 {
+
+        overflow: auto;
+        max-height: 380px;
+    }
+
+    .temp {
+        display: flex;
+        justify-content: space-evenly;
+        border: 1px solid rgb(141, 127, 127);
+        /* margin-left: 20%;
+    margin-right: 20%; */
+    }
+
+    @media (min-width: 992px) {
+        .temp {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .temp {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+        <nav class="navbar navbar-light bg-light fixed-top">
+            <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="https://www.planotechevents.com/wp-content/uploads/2022/01/logo.png" alt="planotech Logo"
+                        style="width:150px;  max-width: 100%;" class="rounded-pill">
+                </a>
+
+            </div>
+            <div class="buttons" style="display: flex; justify-content: space-between;">
+                <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarThreeDots">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <button style="border: none; background-color: rgb(247, 250, 251); color: #948585;"
+                    class="d-none d-md-inline-block">Resources <i class="fa-solid fa-caret-down"
+                        style="color: #606969;"></i></button>
+                <button style="border: none; background-color: rgb(247, 250, 251); color: #948585; padding-left: 60px;"
+                    class="d-none d-md-inline-block">Pricing
+                    <i class="fa-solid fa-caret-down" style="color: #606969;"></i></button>
+                <button style="border: none; background-color: rgb(247, 250, 251); color: #948585; padding-left: 60px;"
+                    class="d-none d-md-inline-block">Learn
+                    <i class="fa-solid fa-caret-down" style="color: #606969;"></i></button>
+
+
+            </div>
+
+            <div class="icons align-items-center"> <a href="#" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Setting" class="me-4 d-none d-md-inline-block">
+                    <i class="fa-solid fa-gear" style="color: #000000;"></i>
+                </a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Notification"
+                    class="me-4 d-none d-md-inline-block">
+                    <i class="fa-regular fa-bell" style="color: #000000;"></i>
+                </a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Trash"
+                    class="me-4 d-none d-md-inline-block">
+                    <i class="fa-regular fa-trash-can" style="color: #000000;"></i>
+                </a>
+                <!-- <button type="button" class="btn btn-primary">try for free</button> -->
+            </div>
+            <form class="d-flex">
+                <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Login</button>
+                <!-- <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</button> -->
+            </form>
+
+
+
+            <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: #fff;">
+                        Planotech
+                    </h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item" ?>
+                            <a href="./sample.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Home">
+                                <i class="fa-solid fa-house" style="color: #ffffff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Home</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" ?>
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Dashboard">
+                                <i class="fa-solid fa-gauge-simple-high" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Dashboard</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Account Overview">
+                                <i class="fa-solid fa-file-invoice" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Account
+                                        Overview</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./sample.html" target="_self" class="nav-link" data-bs-toggle="tooltip"
+                                data-bs-placement="right" title="Scheduled Posts">
+                                <i class="fa-regular fa-calendar-plus" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Post</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Social Trending">
+                                <i class="fa-solid fa-square-poll-horizontal" style="color: #fff;"></i><span
+                                    class="ms-1" style="color: #fff;"><small>Social
+                                        Trending</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Analytics">
+                                <i class="fa-solid fa-chart-area" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Analytics</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Content Creation">
+                                <i class="fa-solid fa-pen-to-square" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Content
+                                        Creation</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Audience Engagement">
+                                <i class="fa-solid fa-people-group" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Audience
+                                        Engagement</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Reports">
+                                <i class="fa-solid fa-square-poll-vertical" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Reports</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Team Chat Box">
+                                <i class="fa-regular fa-message" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Team Chat
+                                        Box</small></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="right"
+                                title="Social Integration">
+                                <i class="fa-solid fa-users-gear" style="color: #fff;"></i><span class="ms-1"
+                                    style="color: #fff;"><small>Social
+                                        Integration</small></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropup">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </button>
+                    <ul class="dropdown-menu" style="width: 200px;">
+
+                        <li> <a href="#">
+                                <img class="img-fluid" src="./profile.webp" alt=""
+                                    style="border-radius: 50%; height: 40px; width: 40px; margin-left: 10px;">
+                            </a><span class="ms-2">Profile</span></a>
+                            <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Notification"
+                                class="ms-4 d-none d-md-inline-block">
+                                <i class="fa-regular fa-bell" style="color: #000000;"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user" style="color: #000000;"></i>
+                                <span class="ms-2">Create a Team</span></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-square-plus"
+                                    style="color: #000000;"></i> <span class="ms-2">Connect Profile</span></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear" style="color: #000000;"></i>
+                                <span class="ms-2">Setting</span></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-trash-can"
+                                    style="color: #000000;"></i>
+                                <span class="ms-2">Trash</span></a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"
+                                    style="color: #000000;"></i> <span class="ms-2">Logout</span></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <br><br><br><br>
+    </header>
+    <!-- Three dots menu for smaller screens -->
+    <div class="collapse navbar-collapse d-md-none" id="navbarThreeDots">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button style="border: none; background-color: rgb(247, 250, 251); color: #948585;"
+                    class="nav-link">Resources <i class="fa-solid fa-caret-down" style="color: #606969;"></i></button>
+            </li>
+            <li class="nav-item">
+                <button style="border: none; background-color: rgb(247, 250, 251); color: #948585; padding-left: 60px;"
+                    class="nav-link">Pricing <i class="fa-solid fa-caret-down" style="color: #606969;"></i></button>
+            </li>
+            <li class="nav-item">
+                <button style="border: none; background-color: rgb(247, 250, 251); color: #948585; padding-left: 60px;"
+                    class="nav-link">Learn <i class="fa-solid fa-caret-down" style="color: #606969;"></i></button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container" id="main-content">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <br>
+                <!-- select media -->
+                <div class="dropdown" style="display: flex; justify-content: space-evenly;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Media <span id="selectedCount" class="ms-2">0 selected</span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 300px;">
+                        <li>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="checkbox1" name="mediaPlatform" value="instagram"
+                                    class="form-check-input">
+                                <label for="checkbox1" class="form-check-label">Instagram</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="checkbox2" name="mediaPlatform" value="facebook"
+                                    class="form-check-input">
+                                <label for="checkbox2" class="form-check-label">Facebook</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="checkbox3" name="mediaPlatform" value="twitter"
+                                    class="form-check-input">
+                                <label for="checkbox3" class="form-check-label">Twitter</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item">
+                                <input type="checkbox" id="checkbox4" name="mediaPlatform" value="linkedin"
+                                    class="form-check-input">
+                                <label for="checkbox4" class="form-check-label">LinkedIn</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-item">
+                                <button class="btn btn-sm btn-primary" onclick="clearAll()">Clear All</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <!-- links -->
+                <div class="temp">
+                    <div class="link1">
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Templates">
+                            <i class="fa-solid fa-list" style="color: #030303;"></i>
+                        </a>
+                    </div>
+                    <div class="link2" data-bs-toggle="tooltip" data-bs-placement="right" title="Edit">
+                        <a href="#">
+                            <i class="fa-solid fa-pen-to-square" style="color: #020203;"></i>
+                        </a>
+                    </div>
+                    <div class="link3" data-bs-toggle="tooltip" data-bs-placement="right" title="File">
+                        <a href="#">
+                            <i class="fa-solid fa-folder" style="color: #050506;"></i>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <!-- template1 edit -->
+                <div class="edit">
+                    <div class="mb-3">
+                        <label for="imageUrl" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" id="imageUrl" placeholder="Enter Image URL"
+                            oninput="updateImage()">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="titleInput" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="titleInput" placeholder="Enter Title"
+                            oninput="updateTitle()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="textColorInput" class="form-label">Title Text Color</label>
+                        <input type="color" class="form-control" id="textColorInput" value="#ffffff"
+                            oninput="updateTitle()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="textbgColorInput" class="form-label">Title Background Color</label>
+                        <input type="color" class="form-control" id="textbgColorInput" value="#103e10"
+                            oninput="updateTitle()">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contentInput" class="form-label">Content</label>
+                        <input type="text" class="form-control" id="contentInput" placeholder="Enter Content"
+                            oninput="updateContent()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contentColorInput" class="form-label">Content Text Color</label>
+                        <input type="color" class="form-control" id="contentColorInput" value="#ffffff"
+                            oninput="updateContent()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="background-color1" class="form-label">background Color</label>
+                        <input type="color" class="form-control" id="background-color1" value="#000000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FooterInput" class="form-label">Footer</label>
+                        <input type="text" class="form-control" id="FooterInput" placeholder="Enter footer text"
+                            oninput="updateFooter()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FooterColorInput" class="form-label">Footer Color</label>
+                        <input type="color" class="form-control" id="FooterColorInput" value="#ffffff"
+                            oninput="updateFooter()">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="caption1" class="form-label">Caption</label>
+                        <textarea class="form-control" id="caption1" rows="3" placeholder="Write your caption here"
+                            oninput="updateCaption()"></textarea>
+                    </div>
+                    <!-- <button type="submit"
+                            style="background-color: rgb(154, 154, 244); border-radius: 5px; border: none; padding: 8px;"
+                            onclick="captureAndDownload()"><i class="fa-solid fa-arrow-up-from-bracket"
+                                style="color: #fff;"></i> <span style="color: white;">Share</span></button> -->
+
+                </div>
+                <br>
+                <!-- template2 edit -->
+                <div class="edit1 hidden">
+                    <!-- <div class="mb-3">
+                            <label for="imageUrl1" class="form-label">Image URL</label>
+                            <input type="url" class="form-control" id="imageUrl1" placeholder="Enter Image URL">
+                        </div>
+                        <div class="mb-3">
+                            <label for="title1" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title1" placeholder="Enter Title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="textColor1" class="form-label">Text Color</label>
+                            <input type="color" class="form-control" id="textColor1" value="#000000">
+                        </div>
+                        <div class="mb-3">
+                            <label for="textbgColor1" class="form-label">Text background Color</label>
+                            <input type="color" class="form-control" id="textbgColor1" value="#000000">
+                        </div>
+                        <div class="mb-3">
+                            <label for="content1" class="form-label">Content</label>
+                            <input type="text" class="form-control" id="content1" placeholder="Enter Content">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contentColor1" class="form-label">Content Color</label>
+                            <input type="color" class="form-control" id="contentColor1" value="#000000">
+                        </div> -->
+                    <div class="mb-3">
+                        <label for="background-color" class="form-label">background Color</label>
+                        <input type="color" class="form-control" id="background-color" value="#E1E7EF">
+                    </div>
+                    <!-- <div class="mb-3">
+                                <label for="logoUrl1" class="form-label">Logo URL</label>
+                                <input type="url" class="form-control" id="logoUrl1" placeholder="Enter logo URL">
+                            </div>
+                            <div class="mb-3">
+                                <label for="logoTitle1" class="form-label">Logo Title</label>
+                                <input type="text" class="form-control" id="logoTitle1" placeholder="Enter logo title">
+                            </div>
+                            <div class="mb-3">
+                                <label for="logoSubtitle1" class="form-label">Logo Subtitle</label>
+                                <input type="text" class="form-control" id="logoSubtitle1"
+                                    placeholder="Enter logo subtitle">
+                            </div>
+                            <div class="mb-3">
+                                <label for="arrow21" class="form-label">Logo size</label>
+                                <input type="number" class="form-control" id="arrow21">
+                            </div>
+                            <div class="mb-3">
+                                <label for="footer1" class="form-label">Footer</label>
+                                <input type="text" class="form-control" id="footer1" placeholder="Enter footer text">
+                            </div>
+                            <div class="mb-3">
+                                <label for="footerColor1" class="form-label">Footer Color</label>
+                                <input type="color" class="form-control" id="footerColor1" value="#000000">
+                            </div>
+                            <div class="mb-3">
+                                <label for="caption2" class="form-label">Caption</label>
+                                <textarea class="form-control" id="caption2" rows="3"
+                                    placeholder="Write your caption here"></textarea>
+                            </div> -->
+                    <!-- <button type="submit"
+                            style="background-color: rgb(154, 154, 244); border-radius: 5px; border: none; padding: 8px;"><i
+                                class="fa-solid fa-arrow-up-from-bracket" style="color: #fff;"></i> <span
+                                style="color: white;">Share</span></button> -->
+                </div>
+                <!-- template3 edit -->
+                <div class="edit2 hidden">
+                    <div class="mb-3">
+                        <label for="imageUrl1" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" id="imageUrl1" placeholder="Enter Image URL"
+                            oninput="updateImage1()">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="titleInput1" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="titleInput1" placeholder="Enter Title"
+                            oninput="updateTitle1()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="textColorInput1" class="form-label">Title Text Color</label>
+                        <input type="color" class="form-control" id="textColorInput1" value="#ffffff"
+                            oninput="updateTitle1()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="textbgColorInput1" class="form-label">Title Background Color</label>
+                        <input type="color" class="form-control" id="textbgColorInput1" value="#b10b09"
+                            oninput="updateTitle1()">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contentInput1" class="form-label">Content</label>
+                        <input type="text" class="form-control" id="contentInput1" placeholder="Enter Content"
+                            oninput="updateContent1()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contentColorInput1" class="form-label">Content Text Color</label>
+                        <input type="color" class="form-control" id="contentColorInput1" value="#ffffff"
+                            oninput="updateContent1()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="background-color2" class="form-label">background Color</label>
+                        <input type="color" class="form-control" id="background-color2" value="#000000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FooterInput1" class="form-label">Footer</label>
+                        <input type="text" class="form-control" id="FooterInput1" placeholder="Enter footer text"
+                            oninput="updateFooter1()">
+                    </div>
+                    <div class="mb-3">
+                        <label for="FooterColorInput1" class="form-label">Footer Color</label>
+                        <input type="color" class="form-control" id="FooterColorInput1" value="#ffffff"
+                            oninput="updateFooter1()">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="caption2" class="form-label">Caption</label>
+                        <textarea class="form-control" id="caption2" rows="3" placeholder="Write your caption here"
+                            oninput="updateCaption1()"></textarea>
+                    </div>
+                </div>
+                <!-- templates -->
+                <div class="option">
+                    <button style="padding: 5%; border-style: none; border-radius: 10%;">Template 1</button>
+                    <button style="padding: 5%; border-style: none; border-radius: 10%;">Template 2</button>
+                    <button style="padding: 5%; border-style: none; border-radius: 10%;">Template 3</button>
+                </div>
+                <!-- choose file -->
+                <form action="/quantum-ayrshare/post-file" method="post" enctype="multipart/form-data">
+                    <div class="upload">
+                        <div class="mb-3">
+                            <label for="file" class="form-label">File</label>
+                            <input type="file" class="custom-file-input" id="file" accept="image/*,video/*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="caption" class="form-label">Caption</label>
+                            <textarea class="form-control" id="caption" rows="3"
+                                placeholder="Write your caption here"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background-color: rgb(154, 154, 244);"
+                            id="showSpinnerBtn" onclick="shareAndDownload()">
+                            <i class="fa-solid fa-arrow-up-from-bracket" style="color: #fff;"></i>
+                            Share</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" style="display:flex; justify-content:center;">
+                <div>
+                    <div></div>
+                    <br>
+                    <h5>Template Preview</h5>
+                    <div class="card img-fluid" style="width:330px;">
+                        <div class="card-body">
+                            <img id="previewImage" src="" alt="Preview" class="card-img-top" style="max-width:100%;">
+                            <video id="previewVideo" src="" controls class="card-img-top"
+                                style="max-width:100%;"></video>
+                            <div id="displayTextPreview" class="mb-3">
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                <p id="displayTextContent"></p>
+                            </div>
+
+                            <!-- <button type="submit" class="btn btn-primary"
+                                    style="background-color: rgb(154, 154, 244);" id="showSpinnerBtn"
+                                    id="showSpinnerBtn" onclick="shareAndDownload()">
+                                    <i class="fa-solid fa-arrow-up-from-bracket" style="color: #fff;"></i>
+                                    Share</button>
+
+
+
+                                <div class="overlay" id="overlay"></div>
+                                <div class="spinner-container" id="spinner-container">
+                                    <div class="spinner"></div>
+                                </div> -->
+                        </div>
+                        <!-- Template1 -->
+                        <div class="temp1">
+                            <div class="instagram-post" id="imageContainer">
+                                <img src="https://img.freepik.com/premium-photo/deep-tropical-jungle-southeast-asia_480416-72.jpg"
+                                    alt="Post Image" class="img-fluid">
+                                <div class="post-content">
+                                    <div class="title1" id="dynamicTitle">
+                                        Planotech
+                                    </div>
+                                    <div class="content1" id="dynamicContent">
+                                        A forest is a complex ecological system in which trees are the dominant
+                                        life-form.
+                                    </div>
+                                    <div class="footer1" id="dynamicFooter">planotechgroupofcompanies</div>
+                                </div>
+                            </div>
+                            <div id="captionDisplay" class="firstTemplate mb-3"
+                                style="height: auto; width: 100%; border: none; display: inline-block;">
+                                <!-- Caption content will be displayed here -->
+                            </div>
+                        </div>
+
+                        <!-- Template2 -->
+                        <div class="main hidden">
+                            <div class="main1">
+                                <div class="logodetail">
+                                    <div class="disc" style="display: flex;">
+                                        <img src="https://media.licdn.com/dms/image/C510BAQHIX6ChDmDNug/company-logo_200_200/0/1630627096366/planotechmediahouse_logo?e=2147483647&v=beta&t=CxCmEb0LKSJfu8sV4qjdvtAcGfaqYh1zsXs_urL69MA"
+                                            alt="" style="width: 40px; height: 40px;">
+                                        <div>
+                                            <div class="companyname">PLANOTECH</div>
+                                            <div class="companyTagLine">Event and Management</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="display">
+                                    <img src="https://t3.ftcdn.net/jpg/05/63/76/92/360_F_563769202_XvjMvyMO593Wt70Um2OQPJ5CZrTXbT4t.jpg"
+                                        alt="">
+                                    <div class="all">
+                                        <div class="seaContent">A sea is a large body of salty water. There are
+                                            particular seas and the sea. The sea commonly refers to the ocean, the
+                                            wider body of seawater.</div>
+                                        <div class="seaFooter" style="margin-top: 70PX; font-size: 10px;">
+                                            planotechgroupofcompanies</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Template3 -->
+                        <div class="temp3 hidden">
+                            <div class="honey" id="heartday">
+                                <div class="didyou-template" id="didyou-template">
+                                    <div class="didyou-template__top">
+                                        <div class="didyou-template__top-overlay"></div>
+                                    </div>
+                                    <div class="didyou-template__bot">
+                                        <div class="didyou-template__bot-title" id="temp3Title">World Heart Day
+                                        </div>
+                                        <div class="didyou-template__bot-content" id="temp3Content">May your heart
+                                            always beat
+                                            with love, joy, and good health on this World Heart Day and every day
+                                            that follows
+                                        </div>
+                                        <div class="didyou-template__bot-footer" id="temp3Footer">September 29th
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="captionDisplay1" class="firstTemplate mb-3"
+                                style="height: auto; width: 100%; border: none; display: inline-block;">
+                                <!-- Caption content will be displayed here -->
+                            </div>
+                            <button style="background-color: rgb(154, 154, 244);" type="button" class="btn btn-primary"
+                                onclick="captureAndDownload()"><i class="fa-solid fa-arrow-up-from-bracket"
+                                    style="color: #fff;"></i>
+                                Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your login form goes here -->
+                    <form>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-outline-danger w-100">Continue with Google</button>
+                        </div>
+                        <hr class="my-4">
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal"
+                                data-bs-target="#emailLoginModal">Continue with Email</button>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <p class="mt-3 text-center">
+                            Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                data-bs-target="#signupModal">Signup</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Login Modal -->
+    <div class="modal fade" id="emailLoginModal" tabindex="-1" aria-labelledby="emailLoginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailLoginModalLabel">Continue with Email</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your email login form goes here -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="emailLogin" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailLogin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordLogin" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="passwordLogin" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Signup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Your signup form goes here -->
+                    <form>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-outline-danger w-100">Continue with Google</button>
+                        </div>
+                        <hr class="my-4">
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signupEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Signup</button>
+                        <p class="mt-3 text-center">
+                            Already have an account? <a href="#" data-bs-toggle="modal" data-bs-dismiss="modal"
+                                data-bs-target="#loginModal">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var link1 = document.querySelector('.link1 a');
+            var link2 = document.querySelector('.link2 a');
+            var link3 = document.querySelector('.link3 a');
+            var optionDiv = document.querySelector('.option');
+            var editDiv = document.querySelector('.edit');
+            var uploadDiv = document.querySelector('.upload');
+            var fileInput = document.getElementById('file');
+            var fileInput = document.getElementById('file');
+            var previewImage = document.getElementById('previewImage');
+            var captionInput = document.getElementById('caption');
+            var displayTextContent = document.getElementById('displayTextContent');
+            var template1Button = document.querySelector('.option button:nth-child(1)');
+            var cardBody = document.querySelector('.card-body');
+            var instagramPost = document.querySelector('.instagram-post');
+            var edit = document.querySelector('.edit');
+            var option = document.querySelector('.option');
+            var template2Button = document.querySelector('.option button:nth-child(2)');
+            var edit1 = document.querySelector('.edit1');
+            var main = document.querySelector('.main');
+            var temp1 = document.querySelector('.temp1');
+            var template3Button = document.querySelector('.option button:nth-child(3)');
+            var temp3 = document.querySelector('.temp3');
+            var edit2 = document.querySelector('.edit2');
+            // var firstTemplate = document.querySelector('.firstTemplate');
+
+
+            // Initially hide instagram-post, edit, and option
+            hideElement(instagramPost);
+            hideElement(edit);
+            hideElement(option);
+            hideElement(temp1);
+
+
+
+            // Add click event listener to Template 1 button
+            template1Button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Toggle visibility of card-body, instagram-post, edit, and option
+                // toggleVisibility(cardBody);
+                // toggleVisibility(instagramPost);
+                // toggleVisibility(edit);
+                hideElement(option);
+                hideElement(cardBody);
+                showElement(instagramPost);
+                showElement(edit);
+                showElement(temp1);
+                hideElement(temp3);
+                hideElement(edit2);
+                // showElement(firstTemplate);
+            });
+
+            // Add click event listener to Template 2 button
+            template2Button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Hide unnecessary elements
+                hideElement(cardBody);
+                hideElement(instagramPost);
+                hideElement(edit);
+                showElement(edit1);
+                showElement(main);
+                hideElement(option);
+                hideElement(temp1);
+                hideElement(temp3);
+                hideElement(edit2);
+                // hideElement(firstTemplate);
+            });
+            template3Button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Hide unnecessary elements
+                hideElement(cardBody);
+                hideElement(instagramPost);
+                hideElement(edit);
+                hideElement(edit1);
+                hideElement(main);
+                hideElement(option);
+                hideElement(temp1);
+                showElement(temp3);
+                showElement(edit2);
+                // hideElement(firstTemplate);
+            });
+
+
+
+            // Add click event listener to link2
+            link2.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Toggle visibility of edit
+                // toggleVisibility(edit);
+
+                // Hide option when edit is displayed
+                hideElement(option);
+                hideElement(edit1);
+                hideElement(main);
+                showElement(instagramPost);
+                hideElement(cardBody);
+
+
+                hideElement(optionDiv);
+                showElement(editDiv);
+                hideElement(uploadDiv);
+                showElement(temp1);
+                hideElement(temp3);
+                hideElement(edit2);
+            });
+
+            // Add click event listener to link3
+            link3.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                // Show card-body
+                showElement(cardBody);
+
+                // Hide instagram-post, edit, and option
+                hideElement(instagramPost);
+                hideElement(edit);
+                hideElement(option);
+
+                hideElement(edit1);
+                hideElement(main);
+
+                hideElement(optionDiv);
+                hideElement(editDiv);
+                showElement(uploadDiv);
+                hideElement(temp1);
+                hideElement(temp3);
+                hideElement(edit2);
+            });
+
+            // Initially hide both divs
+            hideElement(optionDiv);
+            hideElement(editDiv);
+            hideElement(uploadDiv);
+
+
+            // Add click event listeners to links
+            link1.addEventListener('click', function (event) {
+                event.preventDefault();
+                showElement(optionDiv);
+                hideElement(editDiv);
+                hideElement(uploadDiv);
+                hideElement(edit1);
+                hideElement(main);
+                hideElement(temp3);
+                hideElement(edit2);
+            });
+
+
+
+            // Function to toggle visibility by adding/removing 'hidden' class
+            function toggleVisibility(element) {
+                element.classList.toggle('hidden');
+            }
+
+            // Function to hide an element by adding 'hidden' class
+            function hideElement(element) {
+                element.classList.add('hidden');
+            }
+
+            // Function to show an element by removing 'hidden' class
+            function showElement(element) {
+                element.classList.remove('hidden');
+            }
+            // Add event listener to file input
+            fileInput.addEventListener('change', updatePreview);
+
+            function updatePreview() {
+                var file = fileInput.files[0];
+
+                if (file) {
+                    // Check if the file is an image
+                    if (file.type.startsWith('image/')) {
+                        // Display image preview
+                        previewImage.style.display = 'block';
+                        previewVideo.style.display = 'none';
+
+                        // Use FileReader to read the image file and set the image source
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            previewImage.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    } else if (file.type.startsWith('video/')) {
+                        // Display video preview
+                        previewImage.style.display = 'none';
+                        previewVideo.style.display = 'block';
+
+                        // Use FileReader to read the video file and set the video source
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            previewVideo.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                } else {
+                    // If no file selected, clear both the image and video previews
+                    previewImage.src = '';
+                    previewVideo.src = '';
+                }
+            }
+
+            // Update preview on caption input changes
+            captionInput.addEventListener('input', function () {
+                // Display the caption text below the image
+                displayTextContent.textContent = captionInput.value;
+            });
+        });
+
+
+
+        function clearAll() {
+            document.querySelectorAll('.form-check-input').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            updateSelectedCount();
+        }
+
+        function updateSelectedCount() {
+            const selectedCount = document.querySelectorAll('.form-check-input:checked').length;
+            document.getElementById('selectedCount').textContent = selectedCount + ' selected';
+        }
+
+        document.querySelectorAll('.form-check-input').forEach(checkbox => {
+            checkbox.addEventListener('change', function (event) {
+                event.stopPropagation();
+                updateSelectedCount();
+            });
+        });
+
+        document
+            .getElementById("showSpinnerBtn")
+            .addEventListener("click", function () {
+                showLoadingSpinner();
+                // Simulate a delay, replace this with your actual loading process
+                setTimeout(function () {
+                    hideLoadingSpinner();
+                }, 3000); // Adjust the timeout as needed
+            });
+
+        // Show loading spinner and blur background
+        function showLoadingSpinner() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("spinner-container").style.display = "block";
+        }
+
+        // Hide loading spinner and restore background
+        function hideLoadingSpinner() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("spinner-container").style.display = "none";
+        }
+
+        function validateCheckBoxes() {
+            var checkboxes = document.querySelectorAll('input[name="mediaPlatform"]:checked');
+
+            if (checkboxes.length === 0) {
+                alert('At least one checkbox is required. Please select a media platform.');
+                return false;
+            }
+
+            // Continue with your submit logic if checkboxes are selected
+            // For example, you can uncomment the following line to submit a form
+            // document.getElementById('yourFormId').submit();
+
+            return true;
+        }
+
+
+        /*---------------------------edit1-----------------*/
+        function updateImage() {
+            const imageUrl = document.getElementById("imageUrl").value;
+            const imageContainer = document.getElementById("imageContainer");
+
+            // Check if the input is not empty
+            if (imageUrl.trim() !== "") {
+                // Set the source (URL) of the image dynamically
+                imageContainer.innerHTML = `
+        <img src="${imageUrl}" alt="Post Image" class="img-fluid">
+        <div class="post-content">
+            <div class="title1" id="dynamicTitle">Planotech</div>
+            <div class="content1" id="dynamicContent">A forest is a complex ecological system in which trees are the dominant life-form.</div>
+            <div class="footer1">planotechgroupofcompanies</div>
+        </div>`;
+            } else {
+                // If the URL is empty, reset to default content without the image
+                imageContainer.innerHTML = `
+        <div class="post-content">
+            <div class="title1" id="dynamicTitle">Planotech</div>
+            <div class="content1" id="dynamicContent">A forest is a complex ecological system in which trees are the dominant life-form.</div>
+            <div class="footer1">planotechgroupofcompanies</div>
+        </div>`;
+            }
+        }
+
+        function updateTitle() {
+            const titleInput = document.getElementById("titleInput");
+            const textColorInput = document.getElementById("textColorInput");
+            const textbgColorInput = document.getElementById("textbgColorInput");
+            const dynamicTitleElement = document.getElementById("dynamicTitle");
+
+            // Get values from input elements
+            const title = titleInput.value;
+            const textColor = textColorInput.value;
+            const textbgColor = textbgColorInput.value;
+
+            // Set values to the dynamic title
+            dynamicTitleElement.textContent = title;
+            dynamicTitleElement.style.color = textColor;
+            dynamicTitleElement.style.backgroundColor = textbgColor;
+        }
+
+        function updateContent() {
+
+            const contentInput = document.getElementById("contentInput");
+            const contentColorInput = document.getElementById("contentColorInput");
+            const dynamicContentElement = document.getElementById("dynamicContent");
+
+            // Get values from input elements
+            const content = contentInput.value;
+            const contentColor = contentColorInput.value;
+
+            // Set values to the dynamic content
+            dynamicContentElement.textContent = content;
+            dynamicContentElement.style.color = contentColor;
+
+        }
+
+        function updateFooter() {
+            console.log("called");
+            const FooterInput = document.getElementById("FooterInput");
+            const FooterColorInput = document.getElementById("FooterColorInput");
+            const dynamicFooterElement = document.getElementById("dynamicFooter");
+
+            // // Check if the element is found
+            // if (!dynamicFooterElement) {
+            //     console.error("Dynamic footer element not found.");
+            //     return;
+            // }
+
+            // Set values to the dynamic Footer
+            dynamicFooterElement.textContent = FooterInput.value;
+            dynamicFooterElement.style.color = FooterColorInput.value;
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var backgroundColorInput = document.getElementById('background-color');
+            var main1Element = document.querySelector('.main1');
+
+            backgroundColorInput.addEventListener('input', function () {
+                var bgColor = backgroundColorInput.value;
+                main1Element.style.backgroundColor = bgColor;
+            });
+
+
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var backgroundColorInput = document.getElementById('background-color1');
+            var postContentElement = document.querySelector('.post-content');
+
+            backgroundColorInput.addEventListener('input', function () {
+                var bgColor = backgroundColorInput.value;
+                postContentElement.style.backgroundColor = bgColor;
+            });
+        });
+
+        function updateCaption() {
+            var captionInput = document.getElementById("caption1").value;
+            var captionDisplay = document.getElementById("captionDisplay");
+            captionDisplay.textContent = captionInput;
+        }
+
+
+
+        function shareAndDownload() {
+            // Get the content and caption
+            var content = document.getElementById("previewImage").src || document.getElementById("previewVideo").src;
+            var caption = document.getElementById("displayTextContent").innerText;
+
+            // Create an anchor element
+            var link = document.createElement('a');
+
+            // Create a new canvas element
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+
+            // Create an image element
+            var image = new Image();
+
+            // When the image loads, draw it on the canvas
+            image.onload = function () {
+                canvas.width = image.width;
+                canvas.height = image.height;
+                ctx.drawImage(image, 0, 0);
+
+                // Convert the canvas to a data URL with JPEG format and quality
+                var dataURL = canvas.toDataURL("image/jpeg", 0.8);
+
+                // Set the data URL as the anchor's href
+                link.href = dataURL;
+
+                // If there is a caption, set it as the filename
+                if (caption.trim() !== "") {
+                    link.download = caption + ".jpeg"; // Set the filename
+                } else {
+                    link.download = "content.jpeg"; // Default filename if no caption
+                }
+
+                // Trigger the download
+                link.click();
+            };
+
+            // Set the image source
+            image.src = content;
+        }
+
+
+        //-------------------------------edit2---------------------------------------
+        function updateImage1() {
+            const imageUrl1 = document.getElementById('imageUrl1').value;
+            document.querySelector('.didyou-template__top').style.backgroundImage = `url(${imageUrl1})`;
+        }
+
+        // Add similar update functions for other form elements (title, content, footer, etc.)
+
+        function captureAndDownload() {
+            domtoimage.toBlob(document.getElementById('didyou-template'))
+                .then(function (blob) {
+                    // Use FileSaver.js to trigger the download
+                    saveAs(blob, "didyou_template_image.png");
+                })
+                .catch(function (error) {
+                    console.error("Error during capture:", error);
+                });
+        }
+
+        function updateTitle1() {
+            const titleInput1 = document.getElementById("titleInput1");
+            const textColorInput1 = document.getElementById("textColorInput1");
+            const textbgColorInput1 = document.getElementById("textbgColorInput1");
+            const temp3TitleElement = document.getElementById("temp3Title");
+
+            // Get values from input elements
+            const title = titleInput1.value;
+            const textColor = textColorInput1.value;
+            const textbgColor = textbgColorInput1.value;
+
+            // Set values to the dynamic title
+            temp3TitleElement.textContent = title;
+            temp3TitleElement.style.color = textColor;
+            temp3TitleElement.style.backgroundColor = textbgColor;
+        }
+
+        function updateContent1() {
+
+            const contentInput1 = document.getElementById("contentInput1");
+            const contentColorInput1 = document.getElementById("contentColorInput1");
+            const temp3ContentElement = document.getElementById("temp3Content");
+
+            // Get values from input elements
+            const content = contentInput1.value;
+            const contentColor = contentColorInput1.value;
+
+            // Set values to the dynamic content
+            temp3ContentElement.textContent = content;
+            temp3ContentElement.style.color = contentColor;
+
+        }
+
+        function updateFooter1() {
+            const FooterInput1 = document.getElementById("FooterInput1");
+            const FooterColorInput1 = document.getElementById("FooterColorInput1");
+            const temp3FooterElement = document.getElementById("temp3Footer");
+
+            // Set values to the dynamic Footer
+            temp3FooterElement.textContent = FooterInput1.value;
+            temp3FooterElement.style.color = FooterColorInput1.value;
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var backgroundColorInput = document.getElementById('background-color2');
+            var didyouElement = document.querySelector('.didyou-template__bot');
+
+            backgroundColorInput.addEventListener('input', function () {
+                var bgColor = backgroundColorInput.value;
+                didyouElement.style.backgroundColor = bgColor;
+            });
+        });
+        function updateCaption1() {
+            var captionInput1 = document.getElementById("caption2").value;
+            var captionDisplay1 = document.getElementById("captionDisplay1");
+            captionDisplay1.textContent = captionInput1;
+        }
+    </script>
+</body>
+
+</html>
